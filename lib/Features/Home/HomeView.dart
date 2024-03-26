@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/Widgets/BalanceCard.dart';
+import 'package:med_pay/Features/Home/Widgets/recent_transactions_section.dart';
 import 'package:med_pay/Features/Home/Widgets/SavingsDetailCard.dart';
 
 class HomeView extends StatelessWidget {
@@ -33,7 +34,8 @@ class HomeView extends StatelessWidget {
               ],
             ),
           ), // Removed semicolon here
-          UserBalanceDetails(),
+          BalanceCard(),
+          RecentTransaction()
         ],
       ),
     );
