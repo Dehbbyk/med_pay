@@ -14,7 +14,7 @@ class FilterByDateRange extends StatelessWidget {
           child: Text(
             "Monthly",
             style: TextStyle(
-              color: Colors.black45,
+              color: Colors.lightBlue,
               fontSize: 12,
             ),
           ),

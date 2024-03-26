@@ -15,7 +15,7 @@ class FilterByCategories extends StatelessWidget {
               child: Text(
                 "Show all",
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.black45,
                   fontSize: 12,
                 ),
               ),
@@ -26,7 +26,7 @@ class FilterByCategories extends StatelessWidget {
               child: Text(
                 "Pharmacy",
                 style: TextStyle(
-                  color: Colors.black45,
+                  color: Colors.lightBlue,
                   fontSize: 12,
                 ),
               ),

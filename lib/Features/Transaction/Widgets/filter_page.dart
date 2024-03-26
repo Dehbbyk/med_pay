@@ -31,6 +31,8 @@ class FilterPage extends StatelessWidget {
               "Categories",
               style: TextStyle(
                 fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
               ),
             ),
             Padding(padding: const EdgeInsets.symmetric(vertical: 8)),
@@ -40,19 +42,32 @@ class FilterPage extends StatelessWidget {
               "Transaction Type",
               style: TextStyle(
                 fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
               ),
             ),
             Padding(padding: const EdgeInsets.symmetric(vertical: 8)),
             FilterByTransactionType(),
             SizedBox(height: 30),
             Text(
-              "Date range",
+              "Date type",
               style: TextStyle(
                 fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey
               ),
             ),
             Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
             FilterByDateRange(),
+            SizedBox(height: 30),
+            Text(
+                "Select month",
+              style: TextStyle(
+                fontSize: 14
+              ),
+            ),
+            SizedBox(height: 20),
+            Text("March, 2024"),
             SizedBox(height: 60),
             ElevatedButton(
               onPressed: () {
@@ -73,7 +88,7 @@ class FilterPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 side: BorderSide(
-                  color: Colors.blue,
+                  color: Colors.blue.shade900,
                   width: 2,
                 ),
               ),

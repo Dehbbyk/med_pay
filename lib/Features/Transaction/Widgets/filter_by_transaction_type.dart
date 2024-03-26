@@ -14,7 +14,7 @@ class FilterByTransactionType extends StatelessWidget {
           child: Text(
             "Show all",
             style: TextStyle(
-              color: Colors.black45,
+              color: Colors.lightBlue,
               fontSize: 12,
             ),
           ),
