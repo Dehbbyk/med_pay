@@ -48,11 +48,11 @@ class _HomePageState extends State<HomePage> {
             label: "Transactions",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.rocket_launch),
+            icon: SvgPicture.asset("assets/images/analytics_icon.svg"),
             label: "Analytics",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: SvgPicture.asset("assets/images/profile_icon.svg"),
             label: "Profile",
           ),
         ],
