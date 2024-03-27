@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/HomePage.dart';
 import 'package:med_pay/Features/SingUp/SignUpView.dart';
+import 'package:med_pay/Features/Transaction/Widgets/add_income_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           scaffoldBackgroundColor: Colors.grey.shade100
       ),
-      home: HomePage(),
+      home: AddIncome(),
     );
   }
 }
