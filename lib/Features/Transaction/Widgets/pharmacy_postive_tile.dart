@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:med_pay/Features/utils.dart';
 
-class LabTile extends StatelessWidget {
-  const LabTile({
+import '../../utils.dart';
+class PharmacyTile1 extends StatelessWidget {
+  const PharmacyTile1({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.asset("assets/images/lab_icon.png"),
+      leading: Image.asset("assets/images/phamarcy_icon.png"),
       title: Text(
-        "Laboratory",
+        "Pharmacy",
         style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold
@@ -27,9 +27,9 @@ class LabTile extends StatelessWidget {
       trailing: ElevatedButton(
         onPressed: () {},
         child: Text(
-          "-${getNaira()}20,000",
+          "${getNaira()}20,000",
           style: TextStyle(
-              color: Colors.orange
+              color: Colors.green
           ),
         ),
       ),

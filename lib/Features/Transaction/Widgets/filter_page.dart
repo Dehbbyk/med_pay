@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:med_pay/Features/Home/Widgets/recent_transactions_section.dart';
-import 'package:med_pay/Features/Transaction/TransactionView.dart';
+import 'package:med_pay/Features/Transaction/FilteredPhamarcyView.dart';
 import 'package:med_pay/Features/Transaction/Widgets/filter_by_categories.dart';
 import 'package:med_pay/Features/Transaction/Widgets/filter_by_date_range.dart';
 import 'package:med_pay/Features/Transaction/Widgets/filter_by_transaction_type.dart';
@@ -31,8 +30,8 @@ class FilterPage extends StatelessWidget {
               "Categories",
               style: TextStyle(
                 fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey
+                fontWeight: FontWeight.bold,
+                color: Colors.grey,
               ),
             ),
             Padding(padding: const EdgeInsets.symmetric(vertical: 8)),
@@ -42,32 +41,42 @@ class FilterPage extends StatelessWidget {
               "Transaction Type",
               style: TextStyle(
                 fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey
+                fontWeight: FontWeight.bold,
+                color: Colors.grey,
               ),
             ),
             Padding(padding: const EdgeInsets.symmetric(vertical: 8)),
             FilterByTransactionType(),
             SizedBox(height: 30),
             Text(
-              "Date type",
+              "Date Range",
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
-                color: Colors.grey
+                color: Colors.grey,
               ),
             ),
             Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
             FilterByDateRange(),
             SizedBox(height: 30),
             Text(
-                "Select month",
-              style: TextStyle(
-                fontSize: 14
-              ),
+              "Select month",
+              style: TextStyle(fontSize: 14),
             ),
             SizedBox(height: 20),
-            Text("March, 2024"),
+            Row(
+              children: [
+                Expanded(
+                  child: ListTile(
+                    title: Text(
+                      "March, 2024",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    trailing: Icon(Icons.keyboard_arrow_down),
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: 60),
             ElevatedButton(
               onPressed: () {
@@ -76,19 +85,25 @@ class FilterPage extends StatelessWidget {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      content: TransactionView(),
+                      content: FilteredPhamarcyView(),
                     );
                   },
                 );
               },
-              child: Text("Confirm"),
+              child: Text(
+                  "Confirm",
+                style: TextStyle(
+                    color: Colors.white
+                ),
+              ),
               style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueAccent.shade700,
                 minimumSize: Size(MediaQuery.of(context).size.width * 0.5, 55),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
                 side: BorderSide(
-                  color: Colors.blue.shade900,
+                  color: Colors.blueAccent.shade700,
                   width: 2,
                 ),
               ),

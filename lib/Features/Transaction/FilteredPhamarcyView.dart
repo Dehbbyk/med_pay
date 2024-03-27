@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Transaction/Widgets/filter_page.dart';
-import 'package:med_pay/Features/Transaction/Widgets/lab_positive_tile.dart';
-import 'package:med_pay/Features/Transaction/Widgets/lab_tile.dart';
-import 'package:med_pay/Features/Transaction/Widgets/obgyn_tile.dart';
+import 'package:med_pay/Features/Transaction/Widgets/pharmacy_postive_tile.dart';
 import 'package:med_pay/Features/Transaction/Widgets/pharmacy_tile.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: TransactionView(),
+    home: FilteredPhamarcyView(),
   ));
 }
 
-class TransactionView extends StatelessWidget {
-  const TransactionView({Key? key}) : super(key: key);
+class FilteredPhamarcyView extends StatelessWidget {
+  const FilteredPhamarcyView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,21 +56,19 @@ class TransactionView extends StatelessWidget {
                 )
               ],
             ),
-            PharmacyTile(),
+            PharmacyTile1(),
             SizedBox(height: 15),
-            OgBynTile(),
+            PharmacyTile1(),
             SizedBox(height: 15),
-            LabTile1(),
+            PharmacyTile1(),
             SizedBox(height: 15),
-            PharmacyTile(),
-            SizedBox(height: 15),
-            LabTile1(),
+            PharmacyTile1(),
             SizedBox(height: 15),
             PharmacyTile(),
             SizedBox(height: 15),
-            OgBynTile(),
+            PharmacyTile1(),
             SizedBox(height: 15),
-            OgBynTile()
+            PharmacyTile()
           ],
         ),
       ),

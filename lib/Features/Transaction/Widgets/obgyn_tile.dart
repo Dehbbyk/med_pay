@@ -9,7 +9,7 @@ class OgBynTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(Icons.lock_rounded),
+      leading: Image.asset("assets/images/obgyn_icon.png"),
       title: Text(
         "OB-GYN",
         style: TextStyle(

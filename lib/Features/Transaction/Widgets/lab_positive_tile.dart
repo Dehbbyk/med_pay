@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/utils.dart';
 
-class LabTile extends StatelessWidget {
-  const LabTile({
+class LabTile1 extends StatelessWidget {
+  const LabTile1({
     super.key,
   });
 
@@ -27,9 +27,9 @@ class LabTile extends StatelessWidget {
       trailing: ElevatedButton(
         onPressed: () {},
         child: Text(
-          "-${getNaira()}20,000",
+          "${getNaira()}20,000",
           style: TextStyle(
-              color: Colors.orange
+              color: Colors.green
           ),
         ),
       ),

@@ -9,7 +9,7 @@ class PharmacyTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(Icons.shield_moon_outlined),
+      leading: Image.asset("assets/images/phamarcy_icon.png"),
       title: Text(
         "Pharmacy",
         style: TextStyle(
@@ -23,8 +23,7 @@ class PharmacyTile extends StatelessWidget {
             color: Colors.black38,
             fontSize: 14
         ),
-      ),
-      trailing: ElevatedButton(
+      ),      trailing: ElevatedButton(
         onPressed: () {},
         child: Text(
           "-${getNaira()}20,000",
