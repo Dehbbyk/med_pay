@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AddIncome extends StatelessWidget {
-  const AddIncome({Key? key});
+class AddExpense extends StatelessWidget {
+  const AddExpense({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +147,7 @@ class AddIncome extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: Colors.grey.shade300
+                      color: Colors.grey.shade300
                   ),
                 ),
                 child: TextField(
@@ -163,7 +163,7 @@ class AddIncome extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  'Add Income',
+                  'Add Expense',
                   style: TextStyle(
                       color: Colors.white
                   ),

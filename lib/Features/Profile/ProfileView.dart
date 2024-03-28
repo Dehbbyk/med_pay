@@ -81,7 +81,7 @@ class ProfileView extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Image.asset("assests/images/about_us.png"),
+                leading: Image.asset("assets/images/about_us.png"),
                 title: Text("About Us"),
               ),
               Divider()
