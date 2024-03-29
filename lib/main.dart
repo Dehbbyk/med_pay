@@ -1,10 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:med_pay/Features/Home/HomePage.dart';
-import 'package:med_pay/Features/SingUp/sign_up_page.dart';
-import 'package:med_pay/Features/Transaction/Widgets/add_expense.dart';
-import 'package:med_pay/Features/Transaction/Widgets/add_income_view.dart';
+import 'package:med_pay/Features/SingUp/sign_up001.dart';
+import 'package:med_pay/Features/Transaction/Widgets/splash_screen.dart';
+import 'package:med_pay/Provider/auth_provider.dart';
+import 'package:med_pay/Provider/splash_provider.dart';
+import 'package:med_pay/firebase_options.dart';
+import 'package:provider/provider.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -14,16 +21,32 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primaryColor:Colors.blue ,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-          useMaterial3: true,
-          scaffoldBackgroundColor: Colors.grey.shade100
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => SplashScreenState()),
+        ChangeNotifierProvider(
+          create: (context) => AuthProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            primaryColor:Colors.blue ,
+             colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+            useMaterial3: true,
+            scaffoldBackgroundColor: Colors.grey.shade100
+        ),
+        home: Consumer<SplashScreenState>(
+            builder: (context, state, _) {
+              if (state.isInitialized) {
+                return Signup001();
+              } else {
+                return const SplashScreen();
+              }
+            },
+          )
       ),
-      home: SignUpPage(),
     );
   }
 }
