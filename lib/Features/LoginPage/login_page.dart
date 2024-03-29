@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/Home/HomePage.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key});
@@ -74,7 +75,12 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 25),
             Center(
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=> HomePage()),
+                  );
+                },
                 child: Text(
                   "Login in",
                   style: TextStyle(

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:med_pay/Features/Home/HomePage.dart';
 import 'package:med_pay/Features/LoginPage/login_page.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -100,7 +101,7 @@ class _VerificationPage1State extends State<VerificationPage1> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
               child: Text(

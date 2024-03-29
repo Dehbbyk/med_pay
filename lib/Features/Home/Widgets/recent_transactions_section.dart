@@ -41,7 +41,7 @@ class RecentTransaction extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                          "Find More",
+                          "View More",
                         style: TextStyle(
                           color: Colors.black
                         ),
