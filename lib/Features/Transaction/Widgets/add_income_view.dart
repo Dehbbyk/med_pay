@@ -38,7 +38,7 @@ class AddIncome extends StatelessWidget {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixText: "Category",
+                    hintText: "Category",
                     suffixIcon: Icon(
                       Icons.keyboard_arrow_down,
                     ),
@@ -93,7 +93,7 @@ class AddIncome extends StatelessWidget {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixText: "DD/MM/YYYY",
+                    hintText: "DD/MM/YYYY",
                     suffixIcon: Icon(
                       Icons.calendar_month_outlined,
                     ),
@@ -122,7 +122,7 @@ class AddIncome extends StatelessWidget {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixText: "HH:MM:AM/PM",
+                    hintText: "HH:MM:AM/PM",
                     suffixIcon: Icon(
                       Icons.access_time_outlined,
                     ),
@@ -170,7 +170,7 @@ class AddIncome extends StatelessWidget {
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
-                  minimumSize: Size(MediaQuery.of(context).size.width * 0.5, 55),
+                  minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),

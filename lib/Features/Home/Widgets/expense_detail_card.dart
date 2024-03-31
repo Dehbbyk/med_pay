@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../utils.dart';
 
-class SavingsDetailCard extends StatelessWidget {
-  const SavingsDetailCard({
-    super.key, required this.topRightWidget, required this.balance, this.onClick,
+class ExpenseDetailCard extends StatelessWidget {
+  const ExpenseDetailCard({
+    super.key,  required this.balance, this.onClick, required this.topRightWidget,
   });
 
-  final Widget topRightWidget;
+   final Widget topRightWidget;
   final String balance;
   final Function()? onClick;
 
@@ -19,14 +19,14 @@ class SavingsDetailCard extends StatelessWidget {
       child: Container(
         height: 160,
         decoration: BoxDecoration(
-            color: Colors.blue,
+            color: Colors.orange,
             borderRadius: BorderRadius.circular(16.0)
         ),
         padding: EdgeInsets.all(16.0),
         child: Stack(
           children: [
             Positioned(
-              top: 0,
+                top: 0,
                 right: 0,
                 child: topRightWidget
             ),
@@ -37,7 +37,7 @@ class SavingsDetailCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Total Income",
+                    "Total Expense",
                     style: TextStyle(
                         color: Colors.grey.shade200
                     ),
@@ -47,7 +47,7 @@ class SavingsDetailCard extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontSize: 28,
-                        color: Colors.white
+                          color: Colors.white
                       )
                   ),
                 ],
@@ -60,7 +60,7 @@ class SavingsDetailCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                      "View All",
+                    "View All",
                     style: TextStyle(color: Colors.white),
                   ),
                   Icon(Icons.arrow_forward, color: Colors.white),

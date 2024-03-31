@@ -48,11 +48,11 @@ class _HomePageState extends State<HomePage> {
             label: "Transactions",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/analytics_icon.svg"),
+            icon: Image.asset("assets/images/analytic_icon.png"),
             label: "Analytics",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/profile_icon.svg"),
+            icon: Image.asset("assets/images/profile_icon.png"),
             label: "Profile",
           ),
         ],

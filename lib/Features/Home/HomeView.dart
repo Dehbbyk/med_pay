@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/Widgets/BalanceCard.dart';
 import 'package:med_pay/Features/Home/Widgets/recent_transactions_section.dart';
 import 'package:med_pay/Features/Home/Widgets/SavingsDetailCard.dart';
+import 'package:med_pay/Features/Home/Widgets/take_control.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -33,9 +34,12 @@ class HomeView extends StatelessWidget {
                 ),
               ],
             ),
-          ), // Removed semicolon here
+          ),
           BalanceCard(),
-          RecentTransaction()
+          Expanded(
+            child: TakeControl(),
+          ),
+          RecentTransaction(),
         ],
       ),
     );
