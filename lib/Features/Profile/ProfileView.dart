@@ -48,13 +48,13 @@ class ProfileView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ListTile(
-                leading: Icon(Icons.settings),
+                leading: Icon(Icons.settings, color: Colors.lightBlue,),
                 title: Text("Settings"),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.notifications),
+                leading: Icon(Icons.notifications, color: Colors.lightBlue),
                 title: Text("Notifications"),
                 trailing: Switch(
                   value: true,
@@ -65,7 +65,7 @@ class ProfileView extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.sunny),
+                leading: Icon(Icons.sunny, color: Colors.lightBlue),
                 title: Text("Dark mode"),
                 trailing: Switch(
                   value: false,
@@ -76,7 +76,7 @@ class ProfileView extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.live_help),
+                leading: Icon(Icons.live_help, color: Colors.lightBlue),
                 title: Text("Help/Support"),
               ),
               Divider(),

@@ -10,8 +10,8 @@ class RecentTransaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 16),
-      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Colors.white,
@@ -56,13 +56,9 @@ class RecentTransaction extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(height: 20),
           PharmacyTile(),
-          SizedBox(height: 15),
           OgBynTile(),
-          SizedBox(height: 15),
           LabTile(),
-          SizedBox(height: 15),
           PharmacyTile()
           // Listview start
         ],

@@ -18,6 +18,8 @@ class TransactionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        margin: EdgeInsets.all(20),
+        padding: EdgeInsets.symmetric(vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,21 +34,21 @@ class TransactionView extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return FilterPage();
+                  onPressed: (){
+                    showModalBottomSheet(
+                      context: context,
+                      showDragHandle: true,
+                      builder: ((context) {
+                        return Container(
+                          height: 350,
+                          child: FilterPage(),
+                        );
                       }),
                     );
                   },
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.filter,
-                        size: 18,
-                        color: Colors.black,
-                      ),
+                      Image.asset("assets/images/filter_icon.png"),
                       Text(
                         "Filter",
                         style: TextStyle(
@@ -59,19 +61,19 @@ class TransactionView extends StatelessWidget {
               ],
             ),
             PharmacyTile(),
-            SizedBox(height: 15),
+            SizedBox(height: 8),
             OgBynTile(),
-            SizedBox(height: 15),
+            SizedBox(height: 8),
             LabTile1(),
-            SizedBox(height: 15),
+            SizedBox(height: 8),
             PharmacyTile(),
-            SizedBox(height: 15),
+            SizedBox(height: 8),
             LabTile1(),
-            SizedBox(height: 15),
+            SizedBox(height: 8),
             PharmacyTile(),
-            SizedBox(height: 15),
+            SizedBox(height: 8),
             OgBynTile(),
-            SizedBox(height: 15),
+            SizedBox(height: 8),
             OgBynTile()
           ],
         ),

@@ -13,7 +13,7 @@ class PharmacyTile extends StatelessWidget {
       title: Text(
         "Pharmacy",
         style: TextStyle(
-            fontSize: 15,
+            fontSize: 16,
             fontWeight: FontWeight.bold
         ),
       ),

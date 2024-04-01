@@ -143,7 +143,7 @@ class AddIncome extends StatelessWidget {
               ),
               SizedBox(height:10),
               Container(
-                height: 150,
+                height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
@@ -159,7 +159,7 @@ class AddIncome extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 45),
+              SizedBox(height: 25),
               ElevatedButton(
                 onPressed: () {},
                 child: Text(

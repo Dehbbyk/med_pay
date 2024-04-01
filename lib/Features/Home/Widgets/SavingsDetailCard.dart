@@ -19,7 +19,7 @@ class SavingsDetailCard extends StatelessWidget {
       child: Container(
         height: 160,
         decoration: BoxDecoration(
-            color: Colors.blue,
+            color:Colors.blue.shade700,
             borderRadius: BorderRadius.circular(16.0)
         ),
         padding: EdgeInsets.all(16.0),

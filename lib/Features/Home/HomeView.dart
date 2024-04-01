@@ -1,46 +1,79 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/Widgets/BalanceCard.dart';
 import 'package:med_pay/Features/Home/Widgets/recent_transactions_section.dart';
-import 'package:med_pay/Features/Home/Widgets/SavingsDetailCard.dart';
-import 'package:med_pay/Features/Home/Widgets/take_control.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Hello Mary,",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Hello Mary,",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        Text(
+                          "Welcome Onboard!",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 10), // Add spacing between text and images
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                            onPressed: (){},
+                            child: Image.asset(
+                              "assets/images/notification_icon.png",
+                              height: 50,
+                              width: 50,
+                            ),
+                          ),
+                          Image.asset(
+                            "assets/images/profile_image.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  "Welcome Onboard!",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+              ),
+              BalanceCard(),
+              Padding(
+                padding: EdgeInsets.all( 8),
+                child: Image.asset(
+                  width: double.maxFinite,
+                  "assets/images/take_control_image.png",
+                  fit: BoxFit.cover,
                 ),
-              ],
-            ),
+              ),
+              RecentTransaction(),
+            ],
           ),
-          BalanceCard(),
-          Expanded(
-            child: TakeControl(),
-          ),
-          RecentTransaction(),
-        ],
+        ),
       ),
     );
   }

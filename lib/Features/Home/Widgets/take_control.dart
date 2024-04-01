@@ -7,7 +7,7 @@ class TakeControl extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 100,
+        height: 150,
         decoration: BoxDecoration(
           color: Colors.blue.shade100,
           borderRadius: BorderRadius.circular(16.0),

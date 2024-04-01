@@ -44,7 +44,6 @@ class FilterByCategories extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 10),
         Row(
           children: [
             ElevatedButton(
@@ -81,7 +80,6 @@ class FilterByCategories extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 10),
         Row(
           children: [
             ElevatedButton(
@@ -118,7 +116,6 @@ class FilterByCategories extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 10),
         Row(
           children: [
             ElevatedButton(

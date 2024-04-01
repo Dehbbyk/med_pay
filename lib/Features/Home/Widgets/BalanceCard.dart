@@ -36,7 +36,7 @@ class _BalanceCardState extends State<BalanceCard> with SingleTickerProviderStat
             },
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 8.0),
+                padding: const EdgeInsets.all( 8.0),
                 child: SavingsDetailCard(
                   balance: "500,000",
                   topRightWidget: ElevatedButton(
@@ -58,9 +58,9 @@ class _BalanceCardState extends State<BalanceCard> with SingleTickerProviderStat
                         vertical: 0,
                         horizontal: 8,
                       ),
-                      backgroundColor: Colors.lightBlue,
+                      backgroundColor: Colors.blue.shade500,
                       foregroundColor: Colors.white,
-                        disabledBackgroundColor: Colors.lightBlue,
+                        disabledBackgroundColor: Colors.blue.shade500,
                         disabledForegroundColor: Colors.white
                     ),
                   ),

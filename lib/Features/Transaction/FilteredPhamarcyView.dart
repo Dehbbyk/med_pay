@@ -3,12 +3,6 @@ import 'package:med_pay/Features/Transaction/Widgets/filter_page.dart';
 import 'package:med_pay/Features/Transaction/Widgets/pharmacy_postive_tile.dart';
 import 'package:med_pay/Features/Transaction/Widgets/pharmacy_tile.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: FilteredPhamarcyView(),
-  ));
-}
-
 class FilteredPhamarcyView extends StatelessWidget {
   const FilteredPhamarcyView({Key? key}) : super(key: key);
 
@@ -40,11 +34,7 @@ class FilteredPhamarcyView extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.filter,
-                        size: 18,
-                        color: Colors.black,
-                      ),
+                      Image.asset("assets/images/filter_icon.png"),
                       Text(
                         "Filter",
                         style: TextStyle(
@@ -57,17 +47,11 @@ class FilteredPhamarcyView extends StatelessWidget {
               ],
             ),
             PharmacyTile1(),
-            SizedBox(height: 15),
             PharmacyTile1(),
-            SizedBox(height: 15),
             PharmacyTile1(),
-            SizedBox(height: 15),
             PharmacyTile1(),
-            SizedBox(height: 15),
             PharmacyTile(),
-            SizedBox(height: 15),
             PharmacyTile1(),
-            SizedBox(height: 15),
             PharmacyTile()
           ],
         ),

@@ -15,7 +15,7 @@ class FilterByDateRange extends StatelessWidget {
             "Monthly",
             style: TextStyle(
               color: Colors.lightBlue,
-              fontSize: 12,
+              fontSize: 11,
             ),
           ),
         ),
@@ -26,7 +26,7 @@ class FilterByDateRange extends StatelessWidget {
             "Quarterly",
             style: TextStyle(
               color: Colors.black45,
-              fontSize: 12,
+              fontSize: 11,
             ),
           ),
         ),
@@ -37,7 +37,7 @@ class FilterByDateRange extends StatelessWidget {
             "Yearly",
             style: TextStyle(
               color: Colors.black45,
-              fontSize: 12,
+              fontSize: 11,
             ),
           ),
         ),
@@ -48,7 +48,7 @@ class FilterByDateRange extends StatelessWidget {
             "Custom",
             style: TextStyle(
               color: Colors.black45,
-              fontSize: 12,
+              fontSize: 11,
             ),
           ),
         ),
