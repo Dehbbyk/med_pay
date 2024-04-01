@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/HomePage.dart';
+import 'package:med_pay/Features/SingUp/Widgets/verification_page1.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -92,7 +93,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ? () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => VerificationPage1()),
                 );
               }
                   : null,
