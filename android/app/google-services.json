@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "207496532223",
+    "project_id": "medpay-ca0f6",
+    "storage_bucket": "medpay-ca0f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207496532223:android:3b604fb12ff873d28ebcca",
+        "android_client_info": {
+          "package_name": "com.example.med_pay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207496532223-mnf89ipmgki6uibo4hbipk6mf6u8t8u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHauwCLX-7tTOjoZld7SCk8dDslVZHg58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207496532223-mnf89ipmgki6uibo4hbipk6mf6u8t8u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
