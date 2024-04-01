@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/HomePage.dart';
 import 'package:med_pay/Features/SingUp/Widgets/verification_page1.dart';
+import 'package:med_pay/Provider/auth_provider.dart';
+import 'package:provider/provider.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    final userProvider = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -91,6 +94,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ElevatedButton(
               onPressed: name != '' && email != '' && password != '' && confirmPassword != ''
                   ? () {
+                userProvider.signInWithEmailAndPassword(email, password, name, context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => VerificationPage1()),

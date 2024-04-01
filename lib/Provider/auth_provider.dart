@@ -23,6 +23,7 @@ class AuthProvider extends ChangeNotifier {
       );
       _user = userCredential.user;
       await saveUserDataToFirestore();
+      print("Successful");
       Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => const TransactionView()));
       notifyListeners();
