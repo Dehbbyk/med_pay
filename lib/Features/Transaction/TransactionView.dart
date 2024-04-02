@@ -36,14 +36,22 @@ class TransactionView extends StatelessWidget {
                 TextButton(
                   onPressed: (){
                     showModalBottomSheet(
+                       isScrollControlled: true,
                       context: context,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.elliptical(50, 50)
+                        )
+                      ),
                       showDragHandle: true,
-                      builder: ((context) {
-                        return Container(
-                          height: 350,
-                          child: FilterPage(),
+                      builder: (context) {
+                        return Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            FilterPage(),
+                          ],
                         );
-                      }),
+                      },
                     );
                   },
                   child: Row(

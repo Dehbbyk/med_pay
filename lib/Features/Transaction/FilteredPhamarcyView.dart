@@ -8,52 +8,58 @@ class FilteredPhamarcyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Transactions",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          margin: EdgeInsets.symmetric(vertical: 10),
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Transactions",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return FilterPage();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Image.asset("assets/images/filter_icon.png"),
-                      Text(
-                        "Filter",
-                        style: TextStyle(
-                          color: Colors.black54,
+                  TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Image.asset("assets/images/filter_icon.png"),
+                        Text(
+                          "Filter",
+                          style: TextStyle(
+                            color: Colors.black54,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-            PharmacyTile1(),
-            PharmacyTile1(),
-            PharmacyTile1(),
-            PharmacyTile1(),
-            PharmacyTile(),
-            PharmacyTile1(),
-            PharmacyTile()
-          ],
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 15),
+              PharmacyTile1(),
+              SizedBox(height: 8),
+              PharmacyTile1(),
+              SizedBox(height: 8),
+              PharmacyTile1(),
+              SizedBox(height: 8),
+              PharmacyTile1(),
+              SizedBox(height: 8),
+              PharmacyTile1(),
+              SizedBox(height: 8),
+              PharmacyTile1(),
+              SizedBox(height: 8),
+              PharmacyTile(),
+              SizedBox(height: 8),
+              PharmacyTile1()
+            ],
+          ),
         ),
       ),
     );
