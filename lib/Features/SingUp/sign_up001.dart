@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:med_pay/Features/SingUp/sign_up_page.dart';
 import 'package:med_pay/Provider/auth_provider.dart';
 import 'package:provider/provider.dart';
