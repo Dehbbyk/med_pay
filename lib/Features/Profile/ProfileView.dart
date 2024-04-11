@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/Profile/Widgets/help_view.dart';
+import 'package:med_pay/Features/Profile/Widgets/settings_view.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -43,59 +45,74 @@ class ProfileView extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Container(
-            padding: EdgeInsets.all(16),child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ListTile(
-                leading: Icon(Icons.settings, color: Colors.lightBlue,),
-                title: Text("Settings"),
-                trailing: Icon(Icons.arrow_forward_ios),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.notifications, color: Colors.lightBlue),
-                title: Text("Notifications"),
-                trailing: Switch(
-                  value: true,
-                  onChanged: (value){},
-                  activeColor: Colors.white,
-                  activeTrackColor: Colors.green.shade300,
+            padding: EdgeInsets.all(16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SettingsView()),
+                    );
+                  },
+                  child: ListTile(
+                    leading: Icon(Icons.settings, color: Colors.lightBlue),
+                    title: Text("Settings"),
+                    trailing: Icon(Icons.arrow_forward_ios),
+                  ),
                 ),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.sunny, color: Colors.lightBlue),
-                title: Text("Dark mode"),
-                trailing: Switch(
-                  value: false,
-                  onChanged: (value){},
-                  activeColor: Colors.white,
-                  activeTrackColor: Colors.grey,
+                Divider(),
+                ListTile(
+                  leading: Icon(Icons.notifications, color: Colors.lightBlue),
+                  title: Text("Notifications"),
+                  trailing: Switch(
+                    value: true,
+                    onChanged: (value) {},
+                    activeColor: Colors.white,
+                    activeTrackColor: Colors.green.shade300,
+                  ),
                 ),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.live_help, color: Colors.lightBlue),
-                title: Text("Help/Support"),
-              ),
-              Divider(),
-              ListTile(
-                leading: Image.asset("assets/images/about_us.png"),
-                title: Text("About Us"),
-              ),
-              Divider()
-            ],
-          ),
+                Divider(),
+                ListTile(
+                  leading: Image.asset('assets/images/dark_mode.png'),
+                  title: Text("Dark mode"),
+                  trailing: Switch(
+                    value: false,
+                    onChanged: (value) {},
+                    activeColor: Colors.white,
+                    activeTrackColor: Colors.grey,
+                  ),
+                ),
+                Divider(),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HelpView()),
+                    );
+                  },
+                  child: ListTile(
+                    leading: Icon(Icons.live_help, color: Colors.lightBlue),
+                    title: Text("Help/Support"),
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  leading: Image.asset("assets/images/about_us.png"),
+                  title: Text("About Us"),
+                ),
+                Divider()
+              ],
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                  "Logout",
-                style: TextStyle(
-                  color: Colors.orange
-                ),
+                "Logout",
+                style: TextStyle(color: Colors.orange),
               ),
               Image.asset("assets/images/logout_icon.png")
             ],

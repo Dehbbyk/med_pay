@@ -67,7 +67,7 @@ class LoginPage extends StatelessWidget {
                   "Forgot Password?",
                   style: TextStyle(
                     fontSize: 12,
-                    color: Colors.black54,
+                    color: Colors.lightBlue,
                   ),
                 ),
               ),

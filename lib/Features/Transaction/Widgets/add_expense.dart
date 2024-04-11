@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/Transaction/Widgets/add_income_category.dart';
 
-class AddExpense extends StatelessWidget {
+class AddExpense extends StatefulWidget {
   const AddExpense({Key? key});
 
+  @override
+  State<AddExpense> createState() => _AddIncomeState();
+}
+
+class _AddIncomeState extends State<AddExpense> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +19,7 @@ class AddExpense extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Add Income",
+                "Add Expense",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30,
@@ -21,40 +27,43 @@ class AddExpense extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Text(
-                "Select Category",
+                "Category",
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey.shade700
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade700,
                 ),
               ),
               SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Colors.grey.shade300, // Faint border color
-                  ),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Category",
-                    suffixIcon: Icon(
-                      Icons.keyboard_arrow_down,
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SelectCategory();
+                    },
+                  );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Select Category',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
+                    Icon(Icons.keyboard_arrow_down)
+                  ],
                 ),
               ),
               SizedBox(height: 20),
               Text(
                 "Amount",
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey.shade700
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade700,
                 ),
               ),
               SizedBox(height: 10),
@@ -78,38 +87,41 @@ class AddExpense extends StatelessWidget {
               Text(
                 "Date",
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey.shade700
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade700,
                 ),
               ),
               SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Colors.grey.shade300, // Faint border color
-                  ),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "DD/MM/YYYY",
-                    suffixIcon: Icon(
-                      Icons.calendar_month_outlined,
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SelectCategory();
+                    },
+                  );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "DD/MM/YYYY",
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
+                    Icon(Icons.calendar_month_outlined)
+                  ],
                 ),
               ),
               SizedBox(height: 20),
               Text(
                 "Time",
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey.shade700
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade700,
                 ),
               ),
               SizedBox(height: 10),
@@ -136,18 +148,18 @@ class AddExpense extends StatelessWidget {
               Text(
                 "Description(Optional)",
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey.shade700
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade700,
                 ),
               ),
-              SizedBox(height:10),
+              SizedBox(height: 10),
               Container(
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                      color: Colors.grey.shade300
+                    color: Colors.grey.shade300,
                   ),
                 ),
                 child: TextField(
@@ -165,7 +177,7 @@ class AddExpense extends StatelessWidget {
                 child: Text(
                   'Add Expense',
                   style: TextStyle(
-                      color: Colors.white
+                    color: Colors.white,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(

@@ -43,7 +43,7 @@ class HomeView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           TextButton(
-                            onPressed: (){},
+                            onPressed: () {},
                             child: Image.asset(
                               "assets/images/notification_icon.png",
                               height: 50,
@@ -62,12 +62,25 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               BalanceCard(),
-              Padding(
-                padding: EdgeInsets.all( 8),
-                child: Image.asset(
-                  width: double.maxFinite,
-                  "assets/images/take_control_image.png",
-                  fit: BoxFit.cover,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Image.asset(
+                        "assets/images/take_control_image.png",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Image.asset(
+                        "assets/images/take_controll.png",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               RecentTransaction(),
