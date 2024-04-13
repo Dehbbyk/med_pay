@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FilterByCategories extends StatelessWidget {
+class FilterByCategories extends StatefulWidget {
   const FilterByCategories({Key? key}) : super(key: key);
 
+  @override
+  State<FilterByCategories> createState() => _FilterByCategoriesState();
+}
+
+class _FilterByCategoriesState extends State<FilterByCategories> {
   @override
   Widget build(BuildContext context) {
     return Column(

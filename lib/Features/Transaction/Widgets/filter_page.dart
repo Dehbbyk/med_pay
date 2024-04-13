@@ -80,7 +80,7 @@ class FilterPage extends StatelessWidget {
               );
             },
             child: Text(
-              "Confirm",
+              "Apply",
               style: TextStyle(
                 color: Colors.white,
               ),

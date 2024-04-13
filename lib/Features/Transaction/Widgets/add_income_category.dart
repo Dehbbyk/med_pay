@@ -21,6 +21,20 @@ class SelectCategory extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10),
+          Text(
+            "Categories",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey,
+            ),
+          ),
+          SizedBox(height: 10),
+          // Text(
+          //   "Select month",
+          //   style: TextStyle(fontSize: 14),
+          // ),
+          // SizedBox(height: 10),
           FilterByCategories()
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/Profile/Widgets/sync_bank_view.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -37,10 +38,18 @@ class SettingsView extends StatelessWidget {
               title: Text('Personal Details'),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
-            ListTile(
-              leading: Image.asset('assets/images/settings_image.png'),
-              title: Text('Bank Details/Link Bank'),
-              trailing: Icon(Icons.arrow_forward_ios),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SyncBank()),
+                );
+              },
+              child: ListTile(
+                leading: Image.asset('assets/images/settings_image.png'),
+                title: Text('Bank Details/Link Bank'),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
             ),
             ListTile(
               leading: Image.asset('assets/images/settings_image.png'),
