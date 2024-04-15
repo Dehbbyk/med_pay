@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/onboarding/onboarding2.dart';
 import 'package:med_pay/Features/widgets/build_dots.dart';
 import 'package:med_pay/Features/widgets/custom_btn.dart';
 
