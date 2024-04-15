@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Transaction/Widgets/add_income_category.dart';
+import 'package:med_pay/Features/Transaction/Widgets/add_income_date.dart';
 
 class AddIncome extends StatefulWidget {
   const AddIncome({Key? key});
@@ -98,7 +99,7 @@ class _AddIncomeState extends State<AddIncome> {
                   showModalBottomSheet(
                     context: context,
                     builder: (context) {
-                      return SelectCategory();
+                      return SelectDate();
                     },
                   );
                 },

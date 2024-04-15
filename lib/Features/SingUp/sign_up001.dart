@@ -33,15 +33,30 @@ class Signup001 extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    CustomButton(
-                        text: "Continue with google",
-                        color: Colors.white,
-                        textColor: Color(0xff0D60D8),
-                        onPressed: () {
-                          final authProvider =
-                              Provider.of<AuthProvider>(context, listen: false);
-                          authProvider.signInWithGoogle(context);
-                        })
+                Container(
+                  width: 335,
+                  height: 60,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Color(0xff0D60D8)),
+                    onPressed: (){
+                      final authProvider =
+                      Provider.of<AuthProvider>(context, listen: false);
+                      authProvider.signInWithGoogle(context);
+                    },
+                    child: Row(
+                      children: [
+                        Image.asset('assets/images/google_icon.png'),
+                        SizedBox(width: 25),
+                        Text(
+                            'Continue with google',
+                          style: TextStyle(
+                            color: Colors.white
+                          ),
+                        )
+                      ],
+                    )
+                    ),
+                  ),
                   ],
                 ),
               )

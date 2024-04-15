@@ -58,9 +58,9 @@ class _BalanceCardState extends State<BalanceCard> with SingleTickerProviderStat
                         vertical: 0,
                         horizontal: 8,
                       ),
-                      backgroundColor: Colors.blue.shade500,
+                      backgroundColor: Color(0xff0D60D8),
                       foregroundColor: Colors.white,
-                        disabledBackgroundColor: Colors.blue.shade500,
+                        disabledBackgroundColor: Color(0xff0D60D8),
                         disabledForegroundColor: Colors.white
                     ),
                   ),

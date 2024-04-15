@@ -91,17 +91,25 @@ class _SignUpPageState extends State<SignUpPage> {
                 },
               ),
               SizedBox(height: 35.0),
-              ElevatedButton(
-                onPressed: name != '' && email != '' && password != '' && confirmPassword != ''
-                    ? () {
-                  userProvider.signInWithEmailAndPassword(email, password, name, context);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => VerificationPage1()),
-                  );
-                }
-                    : null,
-                child: Text("Continue"),
+              Container(
+                height: 60,
+                width: 150 ,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Color(0xff0D60D8)),
+                  onPressed: name != '' && email != '' && password != '' && confirmPassword != ''
+                      ? () {
+                    userProvider.signInWithEmailAndPassword(email, password, name, context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => VerificationPage1()),
+                    );
+                  }
+                      : null,
+                  child: Text(
+                      "Continue",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
       
             ],

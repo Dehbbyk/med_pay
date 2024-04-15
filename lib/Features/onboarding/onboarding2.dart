@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/SingUp/sign_up001.dart';
+import 'package:med_pay/Features/SingUp/sign_up_page.dart';
 import 'package:med_pay/Features/widgets/build_dots.dart';
 import 'package:med_pay/Features/widgets/custom_btn.dart';
 
@@ -128,14 +130,25 @@ class OnboardingScreen002 extends StatelessWidget {
                         width: 30,
                         height: 30,
                       ),
-                      CustomButton(
-                          text: "Sign up",
-                          color: const Color(0xff0D60D8),
-                          textColor: Colors.white,
-                          onPressed: () {}),
-                      const SizedBox(
-                        width: 30,
-                        height: 30,
+                    Container(
+                      width: 335,
+                      height: 60,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(backgroundColor: Color(0xff0D60D8)),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Signup001()),
+                          );
+                        },
+                        child: Text(
+                          "Sign up",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      // const SizedBox(
+                      //   width: 30,
+                      //   height: 30,
                       ),
                     ],
                   )),

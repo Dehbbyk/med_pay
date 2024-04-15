@@ -111,7 +111,7 @@ class _VerificationPage1State extends State<VerificationPage1> {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueAccent,
+                backgroundColor: Color(0xff0D60D8),
                  minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
