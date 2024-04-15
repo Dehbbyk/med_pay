@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Provider/splash_provider.dart';
 import 'package:provider/provider.dart';
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+
+class SplashScreen1 extends StatefulWidget {
+  const SplashScreen1({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  _SplashScreen1State createState() => _SplashScreen1State();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreen1State extends State<SplashScreen1> {
   @override
   Widget build(BuildContext context) {
     final state = Provider.of<SplashScreenState>(context, listen: false);

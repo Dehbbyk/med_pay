@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/SingUp/sign_up001.dart';
-import 'package:med_pay/Features/Transaction/Widgets/splash_screen.dart';
+import 'package:med_pay/Features/widgets/splash_screen.dart';
 import 'package:med_pay/Provider/auth_provider.dart';
 import 'package:med_pay/Provider/splash_provider.dart';
 import 'package:med_pay/firebase_options.dart';
