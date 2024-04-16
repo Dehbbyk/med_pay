@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/Profile/Widgets/manage_hospital.dart';
 import 'package:med_pay/Features/Profile/Widgets/password_security.dart';
 import 'package:med_pay/Features/Profile/Widgets/sync_bank_view.dart';
 
@@ -68,10 +69,18 @@ class _SettingsViewState extends State<SettingsView> {
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
             ),
-            ListTile(
-              leading: Image.asset('assets/images/bank_detail.png'),
-              title: Text('Manage Hospital Services'),
-              trailing: Icon(Icons.arrow_forward_ios),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ManageHospital()),
+                );
+              },
+              child: ListTile(
+                leading: Image.asset('assets/images/bank_detail.png'),
+                title: Text('Manage Hospital Services'),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
             ),
             SizedBox(height: 15),
             Text(

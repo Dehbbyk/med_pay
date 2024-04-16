@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Transaction/Widgets/add_expense_sheet.dart';
-import 'package:med_pay/Features/Transaction/Widgets/add_income_category.dart';
+import 'package:med_pay/Features/Transaction/Widgets/select_category.dart';
 import 'package:med_pay/Features/Transaction/Widgets/add_income_date.dart';
 
 class AddExpense extends StatefulWidget {

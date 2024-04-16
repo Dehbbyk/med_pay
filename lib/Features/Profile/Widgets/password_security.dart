@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Profile/Widgets/forgot_password.dart';
 import 'package:med_pay/Features/Profile/Widgets/reset_password.dart';
+import 'package:med_pay/Features/Profile/Widgets/reset_password1.dart';
 import 'package:med_pay/Features/Profile/Widgets/two_factor.dart';
 
 class PasswordSecurity extends StatefulWidget {
@@ -67,7 +68,7 @@ class _PasswordSecurityState extends State<PasswordSecurity> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ForgotPassword()),
+                MaterialPageRoute(builder: (context) =>ResetPassword()),
               );
             },
             child: ListTile(

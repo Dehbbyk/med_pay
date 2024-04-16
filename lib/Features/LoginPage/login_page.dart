@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/HomePage.dart';
+import 'package:med_pay/Features/Profile/Widgets/forgot_password.dart';
 import 'package:med_pay/Features/SingUp/sign_up_page.dart';
 import 'package:med_pay/Provider/auth_provider.dart';
 import 'package:provider/provider.dart';
@@ -106,7 +107,12 @@ class _LoginPageState extends State<LoginPage> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ForgotPassword()),
+                        );
+                      },
                       child: Text(
                         "Forgot Password?",
                         style: TextStyle(
