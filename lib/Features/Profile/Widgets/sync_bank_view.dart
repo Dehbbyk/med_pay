@@ -99,13 +99,13 @@ class SyncBank extends StatelessWidget {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent.shade700,
+                  backgroundColor: Color(0xff0D60D8),
                   minimumSize: Size(MediaQuery.of(context).size.width * 0.75, 55),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
                   side: BorderSide(
-                    color: Colors.blueAccent.shade700,
+                    color: Color(0xff0D60D8),
                     width: 2,
                   ),
                 ),
@@ -117,7 +117,7 @@ class SyncBank extends StatelessWidget {
                 child: Text(
                   "Maybe Later",
                   style: TextStyle(
-                    color: Colors.blueAccent,
+                    color: Color(0xff0D60D8),
                   ),
                 ),
                 style: ElevatedButton.styleFrom(

@@ -21,6 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
+        appBar: AppBar(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -41,61 +42,112 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               SizedBox(height: 18.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Full name',
-                  border: OutlineInputBorder(),
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Colors.grey.shade300, // Faint border color
+                  ),
                 ),
-                onChanged: (value) {
-                  setState(() {
-                    name = value;
-                  });
-                },
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Full name',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      name = value;
+                    });
+                  },
+                ),
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Email Address',
-                  border: OutlineInputBorder(),
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Colors.grey.shade300, // Faint border color
+                  ),
                 ),
-                onChanged: (value) {
-                  setState(() {
-                    email = value;
-                  });
-                },
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Email Address',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      email = value;
+                    });
+                  },
+                ),
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Password',
-                  border: OutlineInputBorder(),
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Colors.grey.shade300, // Faint border color
+                  ),
                 ),
-                onChanged: (value) {
-                  setState(() {
-                    password = value;
-                  });
-                },
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    suffixIcon: Image.asset('assets/images/password_eye.png'),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      password = value;
+                    });
+                  },
+                ),
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Confirm Password',
-                  border: OutlineInputBorder(),
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Colors.grey.shade300, // Faint border color
+                  ),
                 ),
-                onChanged: (value) {
-                  setState(() {
-                    confirmPassword = value;
-                  });
-                },
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: 'Confirm Password',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      confirmPassword = value;
+                    });
+                  },
+                ),
               ),
               SizedBox(height: 35.0),
               Container(
                 height: 60,
                 width: 150 ,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Color(0xff0D60D8)),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff0D60D8),
+                    side: BorderSide(
+                      color: Color(0xff0D60D8),
+                      width: 2,
+                    ),
+                  ),
                   onPressed: name != '' && email != '' && password != '' && confirmPassword != ''
                       ? () {
                     userProvider.signInWithEmailAndPassword(email, password, name, context);
@@ -107,11 +159,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       : null,
                   child: Text(
                       "Continue",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white,
                   ),
                 ),
               ),
-      
+              )
             ],
           ),
         ),

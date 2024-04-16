@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/Transaction/Widgets/add_expense_sheet.dart';
 import 'package:med_pay/Features/Transaction/Widgets/add_income_category.dart';
+import 'package:med_pay/Features/Transaction/Widgets/add_income_date.dart';
 
 class AddExpense extends StatefulWidget {
   const AddExpense({Key? key});
@@ -98,7 +100,7 @@ class _AddIncomeState extends State<AddExpense> {
                   showModalBottomSheet(
                     context: context,
                     builder: (context) {
-                      return SelectCategory();
+                      return SelectDate();
                     },
                   );
                 },
@@ -173,7 +175,26 @@ class _AddIncomeState extends State<AddExpense> {
               ),
               SizedBox(height: 25),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet(
+                    isScrollControlled: true,
+                    context: context,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                            top: Radius.elliptical(50, 50)
+                        )
+                    ),
+                    showDragHandle: true,
+                    builder: (context) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          AddExpenseSheet(),
+                        ],
+                      );
+                    },
+                  );
+                },
                 child: Text(
                   'Add Expense',
                   style: TextStyle(
@@ -181,13 +202,13 @@ class _AddIncomeState extends State<AddExpense> {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent,
+                  backgroundColor: Color(0xff0D60D8),
                   minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
                   side: BorderSide(
-                    color: Colors.blueAccent,
+                    color: Color(0xff0D60D8),
                     width: 2,
                   ),
                 ),

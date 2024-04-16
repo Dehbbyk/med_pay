@@ -91,7 +91,7 @@ class _VerificationPage1State extends State<VerificationPage1> {
                 Text(
                     "Click to resend",
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: Color(0xff0D60D8),
                   ),
                 )
               ],
@@ -117,7 +117,7 @@ class _VerificationPage1State extends State<VerificationPage1> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 side: BorderSide(
-                  color: Colors.blueAccent,
+                  color: Color(0xff0D60D8),
                   width: 2,
                 ),
               ),

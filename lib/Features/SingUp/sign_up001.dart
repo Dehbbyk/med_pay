@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:med_pay/Features/LoginPage/login_page.dart';
 import 'package:med_pay/Features/SingUp/sign_up_page.dart';
 import 'package:med_pay/Provider/auth_provider.dart';
 import 'package:provider/provider.dart';
@@ -37,7 +38,12 @@ class Signup001 extends StatelessWidget {
                   width: 335,
                   height: 60,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Color(0xff0D60D8)),
+                    style: ElevatedButton.styleFrom(
+                      side: BorderSide(
+                        color: Color(0xff0D60D8),
+                        width: 2,
+                      ),
+                    ),
                     onPressed: (){
                       final authProvider =
                       Provider.of<AuthProvider>(context, listen: false);
@@ -50,13 +56,34 @@ class Signup001 extends StatelessWidget {
                         Text(
                             'Continue with google',
                           style: TextStyle(
-                            color: Colors.white
+                            color: Color(0xff0D60D8),
                           ),
-                        )
+                        ),
                       ],
                     )
                     ),
                   ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text('Already have an account?'),
+                        SizedBox(width: 10),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => LoginPage()),
+                            );
+                          },
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              color: Color(0xff0D60D8),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               )

@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Profile/Widgets/help_view.dart';
 import 'package:med_pay/Features/Profile/Widgets/settings_view.dart';
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
+
+  @override
+  _ProfileViewState createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> {
+  bool _isNotificationsOn = true;
+  bool _isDarkModeOn = false;
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +76,12 @@ class ProfileView extends StatelessWidget {
                   leading: Icon(Icons.notifications, color: Colors.lightBlue),
                   title: Text("Notifications"),
                   trailing: Switch(
-                    value: true,
-                    onChanged: (value) {},
+                    value: _isNotificationsOn,
+                    onChanged: (value) {
+                      setState(() {
+                        _isNotificationsOn = value;
+                      });
+                    },
                     activeColor: Colors.white,
                     activeTrackColor: Colors.green.shade300,
                   ),
@@ -79,10 +91,14 @@ class ProfileView extends StatelessWidget {
                   leading: Image.asset('assets/images/dark_mode.png'),
                   title: Text("Dark mode"),
                   trailing: Switch(
-                    value: false,
-                    onChanged: (value) {},
+                    value: _isDarkModeOn,
+                    onChanged: (value) {
+                      setState(() {
+                        _isDarkModeOn = value;
+                      });
+                    },
                     activeColor: Colors.white,
-                    activeTrackColor: Colors.grey,
+                    activeTrackColor: Colors.green.shade300,
                   ),
                 ),
                 Divider(),
