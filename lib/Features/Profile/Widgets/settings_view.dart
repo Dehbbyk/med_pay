@@ -64,7 +64,7 @@ class _SettingsViewState extends State<SettingsView> {
                 );
               },
               child: ListTile(
-                leading: Image.asset('assets/images/settings_image.png'),
+                leading: Image.asset('assets/images/bank_detail.png'),
                 title: Text('Bank Details/Link Bank'),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
@@ -77,7 +77,7 @@ class _SettingsViewState extends State<SettingsView> {
                 );
               },
               child: ListTile(
-                leading: Image.asset('assets/images/bank_detail.png'),
+                leading: Image.asset('assets/images/manage_hospital.png'),
                 title: Text('Manage Hospital Services'),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
@@ -91,7 +91,7 @@ class _SettingsViewState extends State<SettingsView> {
               ),
             ),
             ListTile(
-              leading: Image.asset('assets/images/manage_hospital.png'),
+              leading: Image.asset('assets/images/dark_mode.png'),
               title: Text("Dark mode"),
               trailing: Switch(
                 value: _isDarkModeOn,

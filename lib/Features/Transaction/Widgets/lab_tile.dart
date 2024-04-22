@@ -24,7 +24,7 @@ class LabTile extends StatelessWidget {
             fontSize: 14
         ),
       ),
-      trailing: ElevatedButton(
+      trailing: TextButton(
         onPressed: () {},
         child: Text(
           "-${getNaira()}20,000",

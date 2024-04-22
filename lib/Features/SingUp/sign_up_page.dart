@@ -138,8 +138,8 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               SizedBox(height: 35.0),
               Container(
+                width: 335,
                 height: 60,
-                width: 150 ,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xff0D60D8),

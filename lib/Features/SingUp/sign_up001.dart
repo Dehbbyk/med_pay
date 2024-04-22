@@ -32,10 +32,10 @@ class Signup001 extends StatelessWidget {
                               builder: (context) => SignUpPage()));
                         }),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                 Container(
-                  width: 335,
+                  width: 340,
                   height: 60,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -64,25 +64,27 @@ class Signup001 extends StatelessWidget {
                     ),
                   ),
                     SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Text('Already have an account?'),
-                        SizedBox(width: 10),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => LoginPage()),
-                            );
-                          },
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                              color: Color(0xff0D60D8),
+                    Center(
+                      child: Row(
+                        children: [
+                          Text('Already have an account?'),
+                          SizedBox(width: 10),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => LoginPage()),
+                              );
+                            },
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                color: Color(0xff0D60D8),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   ],
                 ),

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:med_pay/Features/Home/HomePage.dart';
-import 'package:med_pay/Features/LoginPage/login_page.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerificationPage1 extends StatefulWidget {
@@ -14,7 +13,7 @@ class VerificationPage1 extends StatefulWidget {
 class _VerificationPage1State extends State<VerificationPage1> {
   TextEditingController controller = TextEditingController();
   StreamController<ErrorAnimationType>? errorController;
-
+  bool isFilled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +47,7 @@ class _VerificationPage1State extends State<VerificationPage1> {
               textStyle: TextStyle(
                 fontSize: 20,
                 color: Colors.blue,
-                fontWeight: FontWeight.bold
+                fontWeight: FontWeight.bold,
               ),
               inputFormatters: [
                 FilteringTextInputFormatter.digitsOnly
@@ -58,13 +57,13 @@ class _VerificationPage1State extends State<VerificationPage1> {
                 shape: PinCodeFieldShape.box,
                 borderWidth: 1,
                 borderRadius: BorderRadius.circular(8),
-                fieldHeight: 50,
-                fieldWidth: 40,
+                fieldHeight: 62,
+                fieldWidth: 62,
                 inactiveColor: Colors.grey,
                 activeFillColor: Colors.white,
                 selectedColor: Colors.purpleAccent,
                 selectedFillColor: Colors.white,
-                inactiveFillColor: Colors.grey.shade100
+                inactiveFillColor: Colors.grey.shade100,
               ),
               animationDuration: Duration(milliseconds: 300),
               enableActiveFill: true,
@@ -79,6 +78,9 @@ class _VerificationPage1State extends State<VerificationPage1> {
                 )
               ],
               onChanged: (value) {
+                setState(() {
+                  isFilled = value.length == 4; // Check if all 4 boxes are filled
+                });
                 print(value);
               },
             ),
@@ -89,7 +91,7 @@ class _VerificationPage1State extends State<VerificationPage1> {
                 Text("Didn't receive a code?"),
                 SizedBox(width: 5),
                 Text(
-                    "Click to resend",
+                  "Click to resend",
                   style: TextStyle(
                     color: Color(0xff0D60D8),
                   ),
@@ -97,28 +99,32 @@ class _VerificationPage1State extends State<VerificationPage1> {
               ],
             ),
             SizedBox(height: 25),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              },
-              child: Text(
-                'Continue',
-                style: TextStyle(
-                    color: Colors.white
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff0D60D8),
-                 minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                side: BorderSide(
-                  color: Color(0xff0D60D8),
-                  width: 2,
+            Center(
+              child: Container(
+                width: 335,
+                height: 60,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xff0D60D8),
+                    side: BorderSide(
+                      color: Color(0xff0D60D8),
+                      width: 2,
+                    ),
+                  ),
+                  onPressed: isFilled
+                      ? () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  }
+                      : null,
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
             ),

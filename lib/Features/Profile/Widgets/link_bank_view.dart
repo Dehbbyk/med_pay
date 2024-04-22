@@ -76,12 +76,7 @@ class _LinkBankState extends State<LinkBank> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Add your bank details',
-                  style: TextStyle(
-                    color: Colors.orangeAccent,
-                  ),
-                ),
+                Text('Add your bank details'),
                 SizedBox(height: 20), // Adjust the height as needed
                 Text(
                   "User ID/Customer ID",
@@ -106,30 +101,32 @@ class _LinkBankState extends State<LinkBank> {
               ],
             ),
             SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: bankNameController.text.isNotEmpty && userID.isNotEmpty
-                  ? () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SyncConfirmation()),
-                );
-              }
-                  : null,
-              child: Text(
-                "Link to Bank",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueAccent.shade700,
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                side: BorderSide(
-                  color: Colors.blueAccent.shade700,
-                  width: 2,
+            Center(
+              child: Container(
+                width: 335,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: bankNameController.text.isNotEmpty && userID.isNotEmpty
+                      ? () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SyncConfirmation()),
+                    );
+                  }
+                      : null,
+                  child: Text(
+                    "Link to Bank",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueAccent.shade700,
+                    side: BorderSide(
+                      color: Colors.blueAccent.shade700,
+                      width: 2,
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -22,7 +23,7 @@ class AnalyticsView extends StatelessWidget {
                     child: Text(
                       "Analytics",
                       style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -32,6 +33,7 @@ class AnalyticsView extends StatelessWidget {
                     "Transaction Overview",
                     style: TextStyle(
                       fontSize: 17,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
                 ),
@@ -74,9 +76,23 @@ class AnalyticsView extends StatelessWidget {
                         ],
                       ),
                       barChart(context),
-                      Divider(
-                        height: 5,
-                      ),
+                      SizedBox(height:15),
+                      // Container(
+                      //   // margin: EdgeInsets.only(left: 30),
+                      //   child: Row(
+                      //     children: [
+                      //       ListTile(
+                      //         leading: Icon(Icons.circle_outlined, color: Colors.deepOrange,),
+                      //         title: Text("Income"),
+                      //       ),
+                      //       SizedBox(width: 70),
+                      //       ListTile(
+                      //         leading: Icon(Icons.circle_outlined, color: Colors.orange,),
+                      //           title: Text("Expense"))
+                      //     ],
+                      //   ),
+                      // ),
+                      Divider(),
                     ],
                   ),
                 ),
@@ -84,12 +100,15 @@ class AnalyticsView extends StatelessWidget {
                   margin: EdgeInsets.only(left: 30),
                   child: Row(
                     children: [
-                      Text("Income"),
-                      SizedBox(width: 150),
+                      Text("Income",
+                      style: TextStyle(color: Colors.lightBlue),
+                      ),
+                      SizedBox(width: 70),
                       Text("Expense")
                     ],
                   ),
                 ),
+                SizedBox(height:15),
                 splineChart(context)
               ],
             ),
@@ -102,10 +121,10 @@ class AnalyticsView extends StatelessWidget {
 
 Widget barChart(BuildContext context) {
   final List<ChartData> chartData = <ChartData>[
-    ChartData('week 1', 12800, 8090),
-    ChartData('week 2', 12300, 9200),
-    ChartData('week 3', 10700, 10200),
-    ChartData('week 4', 11000, 9500),
+    ChartData('week 1', 500000, 330000),
+    ChartData('week 2', 450000, 420000),
+    ChartData('week 3', 300000, 470000),
+    ChartData('week 4', 450000, 250000),
   ];
   return Center(
       child: Container(

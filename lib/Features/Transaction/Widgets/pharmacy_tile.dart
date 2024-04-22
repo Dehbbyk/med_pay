@@ -23,7 +23,7 @@ class PharmacyTile extends StatelessWidget {
             color: Colors.black38,
             fontSize: 14
         ),
-      ),      trailing: ElevatedButton(
+      ),      trailing: TextButton(
         onPressed: () {},
         child: Text(
           "-${getNaira()}20,000",

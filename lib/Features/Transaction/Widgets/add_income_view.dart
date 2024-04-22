@@ -173,7 +173,7 @@ class _AddIncomeState extends State<AddIncome> {
                   ),
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: 35),
               ElevatedButton(
                 onPressed: () {
                   showModalBottomSheet(

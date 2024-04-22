@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Profile/Widgets/link_bank_view.dart';
+import 'package:med_pay/Features/Profile/Widgets/settings_view.dart';
 
 class SyncBank extends StatelessWidget {
   const SyncBank({Key? key}) : super(key: key);
@@ -85,50 +86,65 @@ class SyncBank extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => LinkBank()),
-                  );
-                },
-                child: Text(
-                  "Get Started",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff0D60D8),
-                  minimumSize: Size(MediaQuery.of(context).size.width * 0.75, 55),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  side: BorderSide(
-                    color: Color(0xff0D60D8),
-                    width: 2,
+              Center(
+                child: Container(
+                  width: 335,
+                  height: 60,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => LinkBank()),
+                      );
+                    },
+                    child: Text(
+                      "Get Started",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff0D60D8),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(35),
+                      ),
+                      side: BorderSide(
+                        color: Color(0xff0D60D8),
+                        width: 2,
+                      ),
+                    ),
                   ),
                 ),
               ),
               SizedBox(height: 10),
               SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  "Maybe Later",
-                  style: TextStyle(
-                    color: Color(0xff0D60D8),
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  minimumSize: Size(MediaQuery.of(context).size.width * 0.75, 55),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  side: BorderSide(
-                    color: Colors.blueAccent.shade700,
-                    width: 2,
+              Center(
+                child: Container(
+                  width: 335,
+                  height: 60,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SettingsView()),
+                      );
+                    },
+                    child: Text(
+                      "Maybe Later",
+                      style: TextStyle(
+                        color: Color(0xff0D60D8),
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(35),
+                      ),
+                      side: BorderSide(
+                        color: Colors.blueAccent.shade700,
+                        width: 2,
+                      ),
+                    ),
                   ),
                 ),
               ),

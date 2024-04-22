@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/Home/Widgets/BalanceCard.dart';
 import 'package:med_pay/Features/Home/Widgets/recent_transactions_section.dart';
+import 'package:med_pay/Features/Profile/ProfileView.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -50,11 +51,20 @@ class HomeView extends StatelessWidget {
                               width: 50,
                             ),
                           ),
-                          Image.asset(
-                            "assets/images/profile_image.png",
-                            height: 40,
-                            width: 40,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ProfileView()), // Replace ProfileView with your actual profile view widget
+                              );
+                            },
+                            child: Image.asset(
+                              "assets/images/profile_image.png",
+                              height: 40,
+                              width: 40,
+                            ),
                           ),
+
                         ],
                       ),
                     ),

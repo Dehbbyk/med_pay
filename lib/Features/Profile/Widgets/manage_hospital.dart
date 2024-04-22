@@ -9,10 +9,10 @@ class ManageHospital extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-            'Manage hospital services',
+          'Manage hospital services',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25
+              fontWeight: FontWeight.bold,
+              fontSize: 25
           ),
         ),
       ),
@@ -27,10 +27,23 @@ class ManageHospital extends StatelessWidget {
                 fontSize: 25,
               ),
             ),
-            ListTile(
-              leading: Image.asset('assets/images/phamarcy_icon.png'),
-              title: Text('Pharmacy'),
-              trailing: Image.asset('assets/images/delete_icon.png'),
+            // Use Dismissible for the Pharmacy service
+            Dismissible(
+              key: UniqueKey(),
+              direction: DismissDirection.endToStart,
+              background: Container(
+                color: Colors.red,
+                child: Icon(Icons.delete),
+                alignment: Alignment.centerRight,
+                padding: EdgeInsets.only(right: 20),
+              ),
+              onDismissed: (direction) {
+                // Implement the delete functionality here
+              },
+              child: ListTile(
+                leading: Image.asset('assets/images/phamarcy_icon.png'),
+                title: Text('Pharmacy'),
+              ),
             ),
             ListTile(
               leading: Image.asset('assets/images/obgyn_icon.png'),
@@ -57,23 +70,25 @@ class ManageHospital extends StatelessWidget {
               title: Text('Laboratory'),
             ),
             SizedBox(height: 45),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Add Service',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff0D60D8),
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                side: BorderSide(
-                  color: Color(0xff0D60D8),
-                  width: 2,
+            Center(
+              child: Container(
+                width: 335,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Add Service',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xff0D60D8),
+                    side: BorderSide(
+                      color: Color(0xff0D60D8),
+                      width: 2,
+                    ),
+                  ),
                 ),
               ),
             ),
