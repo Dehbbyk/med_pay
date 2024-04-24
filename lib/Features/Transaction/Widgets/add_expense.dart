@@ -174,42 +174,44 @@ class _AddIncomeState extends State<AddExpense> {
                 ),
               ),
               SizedBox(height: 55),
-              ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                    isScrollControlled: true,
-                    context: context,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(
-                            top: Radius.elliptical(50, 50)
-                        )
-                    ),
-                    showDragHandle: true,
-                    builder: (context) {
-                      return Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          AddExpenseSheet(),
-                        ],
+              Center(
+                child: Container(
+                  width: 335,
+                  height: 60,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                        context: context,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.elliptical(50, 50)
+                            )
+                        ),
+                        showDragHandle: true,
+                        builder: (context) {
+                          return Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              AddExpenseSheet(),
+                            ],
+                          );
+                        },
                       );
                     },
-                  );
-                },
-                child: Text(
-                  'Add Expense',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff0D60D8),
-                  minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  side: BorderSide(
-                    color: Color(0xff0D60D8),
-                    width: 2,
+                    child: Text(
+                      'Add Expense',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff0D60D8),
+                      side: BorderSide(
+                        color: Color(0xff0D60D8),
+                        width: 2,
+                      ),
+                    ),
                   ),
                 ),
               ),

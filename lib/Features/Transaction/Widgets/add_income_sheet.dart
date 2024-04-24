@@ -24,54 +24,58 @@ class AddIncomeSheet extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24),
-          ElevatedButton(
-              onPressed: (){
-                Navigator.pop(context);
-              },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff0D60D8),
-                  minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(29)
+          Center(
+            child: Container(
+              width: 335,
+              height: 60,
+              child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      side: BorderSide(
+                        color: Color(0xff0D60D8),
+                        width: 2,
+                      ),
+                    backgroundColor:Color(0xff0D60D8),
                   ),
-                  side: BorderSide(
-                    color: Color(0xff0D60D8),
-                    width: 2,
+                  child: Text(
+                    'Add another Income',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                    ),
                   )
               ),
-              child: Text(
-                'Add another Income',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-                ),
-              )
+            ),
           ),
           SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: (){
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
+          Center(
+            child: Container(
+              width: 335,
+              height: 60,
+              child: ElevatedButton(
+                onPressed: (){
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                    side: BorderSide(
+                      color: Color(0xff0D60D8),
+                      width: 2,
+                    )
                 ),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(29)
+                child: Text(
+                  "Go to Home",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff0D60D8),
+                  ),
                 ),
-                side: BorderSide(
-                  color: Color(0xff0D60D8),
-                  width: 2,
-                )
-            ),
-            child: Text(
-              "Go to Home",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color(0xff0D60D8),
               ),
             ),
           )

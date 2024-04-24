@@ -41,54 +41,58 @@ class SyncConfirmation extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff0D60D8),
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(29),
-                ),
-                side: BorderSide(
-                  color: Color(0xff0D60D8),
-                  width: 2,
-                ),
-              ),
-              child: Text(
-                'Link Another Account',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+            Center(
+              child: Container(
+                width: 335,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xff0D60D8),
+                    side: BorderSide(
+                      color: Color(0xff0D60D8),
+                      width: 2,
+                    ),
+                  ),
+                  child: Text(
+                    'Link Another Account',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
             ),
             SizedBox(height: 25),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
+            Center(
+              child: Container(
+                width: 335,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    side: BorderSide(
+                      color: Color(0xff0D60D8),
+                      width: 2,
+                    ),
                   ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.95, 55),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(29),
-                ),
-                side: BorderSide(
-                  color: Color(0xff0D60D8),
-                  width: 2,
-                ),
-              ),
-              child: Text(
-                "Go to Home",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff0D60D8),
+                  child: Text(
+                    "Go to Home",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff0D60D8),
+                    ),
+                  ),
                 ),
               ),
             ),
