@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:med_pay/Features/SingUp/Widgets/verification_page1.dart';
+import 'package:med_pay/Features/models/auth/register_model.dart';
+import 'package:med_pay/Provider/auth_api.dart';
 import 'package:med_pay/Provider/auth_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +15,25 @@ class _SignUpPageState extends State<SignUpPage> {
   String email = '';
   String password = '';
   String confirmPassword = '';
+  final _formKey = GlobalKey<FormState>();
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
+  final _userNameController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+
+  void _register() {
+    if (_formKey.currentState!.validate()) {
+      final user = User(
+        firstName: _firstNameController.text,
+        lastName: _lastNameController.text,
+        userName: _userNameController.text,
+        password: _passwordController.text,
+        email: _emailController.text.isNotEmpty ? _emailController.text : null,
+      );
+      Provider.of<SignUpProvider>(context, listen: false).register(user);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
         appBar: AppBar(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -51,6 +73,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 child: TextField(
+                  controller: _firstNameController,
                   decoration: InputDecoration(
                     hintText: 'Full name',
                     border: OutlineInputBorder(
@@ -74,6 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 child: TextField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                     hintText: 'Email Address',
                     border: OutlineInputBorder(
@@ -97,7 +121,14 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 child: TextField(
+                  controller: _passwordController,
                   obscureText: true,
+                  validator:(value){
+                    if(value == null || value.isEmpty){
+                      return 'Please enter a password';
+                    }
+                    return null;
+                  },
                   decoration: InputDecoration(
                     hintText: 'Password',
                     suffixIcon: Image.asset('assets/images/password_eye.png'),
@@ -105,11 +136,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       borderSide: BorderSide.none,
                     ),
                   ),
-                  onChanged: (value) {
-                    setState(() {
-                      password = value;
-                    });
-                  },
+                  // onChanged: (value) {
+                  //   setState(() {
+                  //     password = value;
+                  //   });
+                  // },
                 ),
               ),
               SizedBox(height: 16.0),
@@ -148,15 +179,16 @@ class _SignUpPageState extends State<SignUpPage> {
                       width: 2,
                     ),
                   ),
-                  onPressed: name != '' && email != '' && password != '' && confirmPassword != ''
-                      ? () {
-                    userProvider.signInWithEmailAndPassword(email, password, name, context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => VerificationPage1()),
-                    );
-                  }
-                      : null,
+                  onPressed: _register,
+                  // onPressed: name != '' && email != '' && password != '' && confirmPassword != ''
+                  //     ? () {
+                  //   userProvider.signInWithEmailAndPassword(email, password, name, context);
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(builder: (context) => VerificationPage1()),
+                  //   );
+                  // }
+                  //     : null,
                   child: Text(
                       "Continue",
                     style: TextStyle(color: Colors.white,
